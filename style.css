@@ -248,7 +248,7 @@ a {
 .intro-bg {
   position: absolute;
   inset: 0;
-  background: url("photo.jpg") center center/cover no-repeat;
+  background: url("photo.JPG") center center/cover no-repeat;
   background-size: cover;
   background-position: top center;
   transform: translateY(0);
