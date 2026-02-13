@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Party</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Bad+Script&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Viaoda+Libre&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Viaoda+Libre&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Viaoda+Libre&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <audio id="bg-music" loop preload="auto">
+      <source src="song.mp3" type="audio/mpeg" />
+    </audio>
+
+    <header class="intro" id="photo">
+      <div class="intro-bg" aria-hidden="true"></div>
+      <div class="intro-shade" aria-hidden="true"></div>
+      <div class="floating-particles" aria-hidden="true">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+      <div class="intro-overlay">
+        <div class="intro-content-side">
+          <h1 class="intro-kicker">Birthday</h1>
+          <h1 class="intro-kicker">Party</h1>
+          <h2 class="intro-title">Saltanat</h2>
+        </div>
+        <div class="intro-content-top">
+          <h1 class="intro-date">28.04.2026</h1>
+          <h1 class="intro-date">19:00</h1>
+
+          <div class="countdown-container">
+            <div class="countdown" id="countdown">
+              <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label" data-i18n="countdown_days"
+                  >Күн</span
+                >
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label" data-i18n="countdown_hours"
+                  >Сағат</span
+                >
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label" data-i18n="countdown_minutes"
+                  >Минут</span
+                >
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label" data-i18n="countdown_seconds"
+                  >Секунд</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="intro-content-bottom">
+          <a
+            class="detail-link"
+            href="https://2gis.kz/almaty/geo/70000001023455019/76.817431,43.205487"
+            >📍 Навои 97, Рыба моей мечты</a
+          >
+          <!-- <p class="intro-hint">Scroll down for more</p> -->
+        </div>
+      </div>
+    </header>
+
+    <!-- RSVP Section -->
+    <section id="form" class="section section-form">
+      <div class="container">
+        <div class="form-card">
+          <h2 class="section-title" data-i18n="form_title">Толтыру</h2>
+
+          <!-- 1. The Hidden Iframe (This catches the redirect) -->
+          <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display: none"
+            onload="
+              if (window.submitted) {
+                showThanks();
+              }
+            "
+          ></iframe>
+          <!-- 2. The Form -->
+          <!-- target="hidden_iframe" sends the result to the invisible box -->
+          <!-- onsubmit="submitted=true" triggers the success message -->
+          <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLSep7_nzvUcPA-ztR0PWU3gYvXo3upEOMr-FFnD3gKLmF7XDHg/formResponse"
+            method="post"
+            target="hidden_iframe"
+            class="pretty-form"
+            id="guest-form"
+            onsubmit="window.submitted = true"
+          >
+            <div class="field">
+              <label for="guest1" data-i18n="form_main_label">Аты-жөні</label>
+              <input
+                id="guest1"
+                name="entry.2112239576"
+                type="text"
+                placeholder="Мысалы: Салтанат"
+                required
+                data-i18n-placeholder="form_main_placeholder"
+              />
+            </div>
+
+            <div class="field">
+              <label for="guest1" data-i18n="form_main_label"
+                >Телефон моделі</label
+              >
+              <input
+                id="guest1"
+                name="entry.999052837"
+                type="text"
+                placeholder="Мысалы: iPhone 17 Pro"
+                required
+                data-i18n-placeholder="form_main_placeholder"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="cta-button cta-secondary"
+              data-i18n="form_finish_button"
+            >
+              Аяқтау
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <button
+      type="button"
+      class="music-btn"
+      id="music-toggle"
+      aria-pressed="false"
+      aria-label="Toggle music"
+    >
+      <svg
+        class="music-icon"
+        id="music-icon"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="music-speaker"
+          d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+
+    <div
+      class="thanks"
+      id="thanks"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="thanks-title"
+    >
+      <div class="thanks-card">
+        <h2 id="thanks-title" class="section-title" data-i18n="thanks_title">
+          Шақыруымды қабылдағаныңа рахмет
+        </h2>
+        <button
+          type="button"
+          class="cta-button"
+          id="close-thanks"
+          data-i18n="thanks_close"
+        >
+          Жабу
+        </button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p data-i18n="footer_text">Menya Zastavili • Бағдат © 2026</p>
+    </footer>
+
+    <script>
+      function scrollToId(id) {
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!window.location.hash) {
+          window.scrollTo(0, 0);
+        }
+
+        var audio = document.getElementById("bg-music");
+        var musicBtn = document.getElementById("music-toggle");
+        var musicIcon = document.getElementById("music-icon");
+
+        function setMusicUI(on) {
+          if (!musicBtn) return;
+          musicBtn.setAttribute("aria-pressed", String(on));
+          musicBtn.classList.toggle("on", on);
+          if (musicIcon) {
+            musicIcon.classList.toggle("muted", !on);
+          }
+        }
+
+        if (musicIcon) {
+          musicIcon.style.display = "block";
+          musicIcon.style.visibility = "visible";
+          musicIcon.style.opacity = "1";
+        }
+
+        if (audio && musicBtn) {
+          audio.volume = 0.4;
+
+          musicBtn.style.display = "flex";
+          musicBtn.style.visibility = "visible";
+          musicBtn.style.opacity = "1";
+
+          audio.addEventListener("error", function (e) {
+            console.warn("Не удалось загрузить аудио файл toizhira.mp3:", e);
+            musicBtn.style.opacity = "0.6";
+            musicBtn.title = "Аудио файл не найден";
+          });
+
+          audio.addEventListener("loadeddata", function () {
+            audio
+              .play()
+              .then(function () {
+                setMusicUI(true);
+              })
+              .catch(function () {
+                console.log("Автоплей заблокирован браузером");
+                setMusicUI(false);
+              });
+          });
+
+          if (audio.readyState >= 2) {
+            audio
+              .play()
+              .then(function () {
+                setMusicUI(true);
+              })
+              .catch(function () {
+                setMusicUI(false);
+              });
+          }
+
+          musicBtn.addEventListener("click", function () {
+            if (audio.paused) {
+              audio
+                .play()
+                .then(function () {
+                  setMusicUI(true);
+                })
+                .catch(function (err) {
+                  console.warn("Не удалось воспроизвести музыку:", err);
+                  setMusicUI(false);
+                  alert(
+                    "Не удалось воспроизвести музыку. Проверьте, что файл toizhira.mp3 загружен на сервер.",
+                  );
+                });
+            } else {
+              audio.pause();
+              setMusicUI(false);
+            }
+          });
+        } else {
+          if (musicBtn) {
+            musicBtn.style.display = "flex";
+            musicBtn.style.opacity = "0.5";
+            musicBtn.style.cursor = "not-allowed";
+          }
+        }
+        var thanks = document.getElementById("thanks");
+        document
+          .getElementById("guest-form")
+          .addEventListener("submit", function (e) {
+            thanks.hidden = false;
+            document.body.classList.add("no-scroll");
+          });
+
+        document
+          .getElementById("close-thanks")
+          .addEventListener("click", function () {
+            thanks.hidden = true;
+            document.body.classList.remove("no-scroll");
+          });
+
+        function showThanks() {
+          document.getElementById("thanks").hidden = false;
+          document.body.classList.add("no-scroll");
+        }
+
+        // Countdown functionality
+        function startCountdown() {
+          const eventDate = new Date("2026-02-28T19:00:00+06:00"); // February 28, 2026, 7:00 PM Almaty time
+
+          function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate.getTime() - now;
+
+            if (distance < 0) {
+              document.getElementById("countdown").innerHTML =
+                '<div class="countdown-ended">The celebration has begun! 🎉</div>';
+              return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+              (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+            );
+            const minutes = Math.floor(
+              (distance % (1000 * 60 * 60)) / (1000 * 60),
+            );
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = String(days).padStart(
+              2,
+              "0",
+            );
+            document.getElementById("hours").textContent = String(
+              hours,
+            ).padStart(2, "0");
+            document.getElementById("minutes").textContent = String(
+              minutes,
+            ).padStart(2, "0");
+            document.getElementById("seconds").textContent = String(
+              seconds,
+            ).padStart(2, "0");
+          }
+
+          updateCountdown();
+          setInterval(updateCountdown, 1000);
+        }
+
+        startCountdown();
+      });
+    </script>
+  </body>
+</html>
